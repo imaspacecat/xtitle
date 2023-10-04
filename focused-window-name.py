@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import argparse
 import sys
 from i3ipc import Connection, Event

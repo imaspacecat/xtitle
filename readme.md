@@ -50,7 +50,7 @@ put the following in your polybar `config.ini` with the given cli argument (exam
 type = custom/script
 label = %output%
 label-foreground = ${colors.primary}
-exec = python ~/.config/polybar/scripts/focused-window-name.py class
+exec = ~/.config/polybar/scripts/focused-window-name.py class
 tail = true
 ```
 
