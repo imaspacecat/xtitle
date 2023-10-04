@@ -1,3 +1,4 @@
+# Better-XWindow-I3
 ## motivation
 default `xwindow` module for polybar outputs full title of application which can be long and miss the name of the application (such as occurs with kitty)
 
