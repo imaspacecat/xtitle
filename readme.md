@@ -17,9 +17,14 @@ class: Code
 
 name: readme.md - i3-scripts - Visual Studio Code
 
+## requirements
+- python
+- [i3ipc](https://pypi.org/project/i3ipc/)
+
 ## installation
-```
-git clone 
+```bash
+git clone https://github.com/imaspacecat/better-xwindow-i3.git
+cp better-xwindow-i3/focused-window-name.py ~/.config/polybar/scripts/focused-window-name.py
 ```
 
 ## how to use
