@@ -48,3 +48,11 @@ label-foreground = ${colors.primary}
 exec = python ~/.config/polybar/scripts/focused-window-name.py class
 tail = true
 ```
+
+and then 
+```ini
+[bar/main]
+...
+modules-center = window-name
+...
+```
