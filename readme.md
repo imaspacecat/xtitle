@@ -1,12 +1,12 @@
 # Better-XWindow-I3
-## motivation
-default `xwindow` module for polybar outputs full title of application which can be long and miss the name of the application (such as occurs with kitty)
+### Motivation
+The default `xwindow` module that is included with Polybar outputs full title of application which can be long and miss. For example, if a given application such as Kitty includes a file path in its application name.
 
-solution: use other properties such as window_class or window_instance
+A solution to this is to use other properties such as `window_class` or `window_instance`
 
 **comparison: title | class**
 
-![Alt text](comparison.png)
+![comparison of xwindow versus enhancement script](comparison.png)
 
 
 `class` will just print the application name
@@ -18,17 +18,17 @@ class: Code
 
 name: readme.md - i3-scripts - Visual Studio Code
 
-## requirements
-- python
+### Requirements
+- Python
 - [i3ipc](https://pypi.org/project/i3ipc/)
 
-## installation
+### Installation
 ```bash
 git clone https://github.com/imaspacecat/better-xwindow-i3.git
 cp better-xwindow-i3/focused-window-name.py ~/.config/polybar/scripts/focused-window-name.py
 ```
 
-## how to use
+### Usage
 ```
 usage: focused-window-name.py [-h] [-o OUTPUT_LENGTH] {class,instance,name,title}
 
@@ -45,7 +45,7 @@ options:
 ```
 
 
-put the following in your polybar `config.ini` with the given cli argument (example below uses `class`)
+Put the following in your Polybar config with the given argument (example below uses `class`)
 ```ini
 [module/window-name]
 type = custom/script
@@ -55,7 +55,7 @@ exec = python ~/.config/polybar/scripts/focused-window-name.py class
 tail = true
 ```
 
-and then 
+Make sure you add it to the modules displayed:
 ```ini
 [bar/main]
 ...
