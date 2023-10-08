@@ -1,63 +1,37 @@
-## motivation
+## Motivation
 default `xwindow` module for polybar outputs full title of application which can be long and miss the name of the application (such as occurs with kitty)
 
 solution: use other properties such as window_class or window_instance
 
-**comparison: title | class**
+The default `xwindow` module that is included with Polybar outputs full title of application which can be long and miss. For example, if a given application such as Kitty includes a file path in its application name.
 
-![Alt text](comparison.png)
+A solution to this is to use other properties such as the window `class` or `instance`
 
+## Requirements
+- Python
+- [python-xlib](https://pypi.org/project/python-xlib/) (should be installed by default if you are on xorg)
 
-`class` will just print the application name
-
-`name` will print the whole title
-example:
-
-class: Code
-
-name: readme.md - i3-scripts - Visual Studio Code
-
-## requirements
-- python
-- [i3ipc](https://pypi.org/project/i3ipc/)
-
-## installation
+## Installation
 ```bash
-git clone https://github.com/imaspacecat/better-xwindow-i3.git
-cp better-xwindow-i3/focused-window-name.py ~/.config/polybar/scripts/focused-window-name.py
+git clone https://github.com/imaspacecat/xtitle.git
+cp xtitle/window-name.py ~/.config/polybar/scripts/window-name.py
 ```
-
-## how to use
-```
-usage: focused-window-name.py [-h] [-o OUTPUT_LENGTH] {class,instance,name,title}
-
-Returns the title or app name of the currently focused window
-
-positional arguments:
-  {class,instance,name,title}
-                        print class of focused window
-
-options:
-  -h, --help            show this help message and exit
-  -o OUTPUT_LENGTH, --output_length OUTPUT_LENGTH
-                        max number of characters to print for title
-```
-
-
-put the following in your polybar `config.ini` with the given cli argument (example below uses `class`)
+put the following in your polybar `config.ini`
 ```ini
 [module/window-name]
 type = custom/script
 label = %output%
-label-foreground = ${colors.primary}
-exec = python ~/.config/polybar/scripts/focused-window-name.py class
+label-foreground = ${colors.foreground}
+exec = /location/of/script/window-name.sh
 tail = true
 ```
-
-and then 
+and then
 ```ini
 [bar/main]
 ...
 modules-center = window-name
 ...
 ```
+
+## Screenshots
+![Alt text](example.png)
