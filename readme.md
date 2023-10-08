@@ -1,8 +1,4 @@
 ## Motivation
-default `xwindow` module for polybar outputs full title of application which can be long and miss the name of the application (such as occurs with kitty)
-
-solution: use other properties such as window_class or window_instance
-
 The default `xwindow` module that is included with Polybar outputs full title of application which can be long and miss. For example, if a given application such as Kitty includes a file path in its application name.
 
 A solution to this is to use other properties such as the window `class` or `instance`
@@ -35,3 +31,6 @@ modules-center = window-name
 
 ## Screenshots
 ![Alt text](example.png)
+
+## Credit
+Thank you to [ssokolow](https://gist.github.com/ssokolow) who wrote the script I modified

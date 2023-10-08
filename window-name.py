@@ -134,7 +134,7 @@ def get_window_name(win_id: Optional[int]) -> Tuple[Optional[str], bool]:
 
 def get_window_class(win_id: Optional[int]) -> Optional[str]:
     if not win_id:
-        last_seen['class'] = None
+        last_seen['class'] = "Nice wallpaper!"
         return last_seen['class']
     
     with window_obj(win_id) as wobj:
